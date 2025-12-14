@@ -1,747 +1,773 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="keywords" content="Bootstrap, Landing page, Template, Business, Service">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>PROMOÇÃO - ACESSO A LISTA DE CURSOS</title>
-  <!--====== Favicon Icon ======-->
-  <link rel="shortcut icon" href="img/Icons/Promo.png" type="image/png">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/animate.css">
-  <link rel="stylesheet" href="css/LineIcons.css">
-  <link rel="stylesheet" href="css/owl.carousel.css">
-  <link rel="stylesheet" href="css/owl.theme.css">
-  <link rel="stylesheet" href="css/magnific-popup.css">
-  <link rel="stylesheet" href="css/nivo-lightbox.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/responsive.css">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso Vitalício - Todos os Cursos em Um Só Lugar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-black: #000000;
+            --text-white: #FFFFFF;
+            --text-gray: #A0A0A0;
+            --accent-blue: #00A3FF;
+            --cta-blue-start: #5B8DEF;
+            --cta-blue-end: #0F6FFF;
+            --card-bg: #0A0A0A;
+            --card-border: #1A1A1A;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--bg-black);
+            color: var(--text-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 163, 255, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(32px, 7vw, 52px);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .subheadline {
+            font-size: clamp(18px, 3.5vw, 22px);
+            color: var(--text-gray);
+            font-weight: 400;
+            margin-bottom: 60px;
+            line-height: 1.5;
+        }
+
+        /* Pain Points Section */
+        .pain-points {
+            padding: 40px 0 60px;
+        }
+
+        .pain-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(91, 141, 239, 0.3);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .pain-card:hover {
+            border-color: rgba(91, 141, 239, 0.6);
+            transform: translateX(4px);
+            box-shadow: 0 4px 16px rgba(15, 111, 255, 0.15);
+        }
+
+        .pain-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .pain-text {
+            font-size: 16px;
+            color: var(--text-gray);
+        }
+
+        /* Solution Section */
+        .solution {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0, 163, 255, 0.03) 50%, transparent 100%);
+        }
+
+        h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(28px, 5vw, 40px);
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+        }
+
+        .solution-text {
+            font-size: 18px;
+            color: var(--text-gray);
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .solution-highlight {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, rgba(91, 141, 239, 0.2) 0%, rgba(15, 111, 255, 0.2) 100%);
+            border: 1px solid rgba(15, 111, 255, 0.4);
+            border-radius: 50px;
+            color: var(--accent-blue);
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 0;
+        }
+
+        .benefits-title {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .benefit-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 32px 28px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-blue), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.4s ease;
+        }
+
+        .benefit-card:hover::before {
+            transform: translateX(0);
+        }
+
+        .benefit-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-4px);
+        }
+
+        .benefit-icon {
+            font-size: 40px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .benefit-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent-blue);
+            margin-bottom: 8px;
+        }
+
+        .benefit-description {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        /* Social Proof Section */
+        .social-proof {
+            padding: 60px 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0, 163, 255, 0.02) 50%, transparent 100%);
+        }
+
+        .social-proof-title {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .testimonial {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 28px 32px;
+            margin-bottom: 20px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial:hover {
+            border-color: #2A2A2A;
+            box-shadow: 0 8px 32px rgba(0, 163, 255, 0.1);
+        }
+
+        .stars {
+            color: #FFD700;
+            font-size: 18px;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-white);
+            margin-bottom: 16px;
+        }
+
+        .testimonial-author {
+            font-size: 14px;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        /* Offer Section */
+        .offer {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .price-container {
+            background: var(--card-bg);
+            border: 2px solid var(--accent-blue);
+            border-radius: 20px;
+            padding: 48px 40px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 163, 255, 0.05) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .price-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .old-price {
+            font-size: 24px;
+            color: var(--text-gray);
+            text-decoration: line-through;
+            margin-bottom: 12px;
+        }
+
+        .current-price {
+            font-family: 'Sora', sans-serif;
+            font-size: 72px;
+            font-weight: 800;
+            color: var(--accent-blue);
+            line-height: 1;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .price-details {
+            font-size: 16px;
+            color: var(--text-gray);
+            margin-bottom: 32px;
+        }
+
+        .offer-benefits {
+            text-align: left;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .offer-benefit {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+
+        .check-icon {
+            color: var(--accent-blue);
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--cta-blue-start) 0%, var(--cta-blue-end) 100%);
+            color: var(--text-white);
+            font-family: 'Sora', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 24px 48px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            margin: 40px 0;
+            box-shadow: 0 0 40px rgba(15, 111, 255, 0.5);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 40px rgba(15, 111, 255, 0.5);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 0 60px rgba(15, 111, 255, 0.7);
+                transform: scale(1.02);
+            }
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(135deg, #4A7CDE 0%, #0E5EEE 100%);
+            transform: scale(1.05) !important;
+            box-shadow: 0 0 80px rgba(15, 111, 255, 0.9) !important;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cta-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .cta-text {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Trust Badges */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            
+            gap: 32px;
+            flex-wrap: wrap;
+            padding: 40px 0;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .badge-icon {
+            font-size: 24px;
+        }
+
+        /* Guarantee Section */
+        .guarantee {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .guarantee-icon {
+            font-size: 56px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .guarantee-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .guarantee-text {
+            font-size: 16px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(15, 111, 255, 0.05) 50%, transparent 100%);
+        }
+
+        .final-cta-title {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(24px, 5vw, 36px);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .final-cta-subtitle {
+            font-size: 18px;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            font-size: 14px;
+            color: var(--text-gray);
+            border-top: 1px solid var(--card-border);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .delay-4 { animation-delay: 0.4s; opacity: 0; }
+        .delay-5 { animation-delay: 0.5s; opacity: 0; }
+        .delay-6 { animation-delay: 0.6s; opacity: 0; }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 0 40px;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-badges {
+                gap: 20px;
+            }
+
+            .price-container {
+                padding: 32px 24px;
+            }
+
+            .current-price {
+                font-size: 56px;
+            }
+
+            .cta-button {
+                padding: 20px 36px;
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Header Section Start -->
-  <header id="home" class="hero-area">
-    <div class="overlay">
-      <span></span>
-      <span></span>
-    </div>
-    <nav class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar">
-      <div class="container">
-        <a href="index.html" class="navbar-brand"><img src="img/Icons/Icon-removebg-preview.png" alt=""></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="lni-menu"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto w-100 justify-content-end">
-            <li class="nav-item">
-              <a class="nav-link page-scroll" href="#home">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link page-scroll" href="#services">Sobre</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link page-scroll" href="#features">Vantagens</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link page-scroll" href="#showcase">Novos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link page-scroll" href="#pricing">Adquirir</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link page-scroll" href="#testimonial">Depoimentos</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <div class="container">
-      <div class="row space-100">
-        <div class="col-lg-6 col-md-12 col-xs-12">
-          <div class="contents">
-            <h2 class="head-title">Pare de Perder Tempo Procurando Cursos</h2>
-            <p>Cansado de procurar cursos e não achar, tenha todos em único Canal</p>
-            <div class="header-button">
-              <a href="https://pay.kirvano.com/9e83b4e7-a2bb-4863-9cbd-edc2bb3ab0ed" rel="nofollow" target="_blank"
-                class="btn btn-border-filled">ADQUIRA AGORA</a>
-
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-12 col-xs-12 p-0">
-          <div class="intro-img">
-            <img src="img/Icons/Design_sem_nome-removebg.png" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-  <!-- Header Section End -->
-
-
-  <!-- Services Section Start -->
-  <section id="services" class="section">
-    <div class="container">
-
-      <div class="row">
-        <!-- Start Col -->
-        <div class="col-lg-4 col-md-6 col-xs-12">
-          <div class="services-item text-center">
-            <div class="icon">
-              <i class="lni-cog"></i>
-            </div>
-            <h4>Pagamento único</h4>
-            <p>No nosso canal do Telegram, você tem acesso a cursos, livros e filmes incríveis por um pagamento único.
-              Sem mensalidades, taxas escondidas ou surpresas. Pague uma vez e tenha acesso ao conteúdo atualizadíssimo
-              e organizado, sem custos adicionais! </p>
-          </div>
-        </div>
-        <!-- End Col -->
-        <!-- Start Col -->
-        <div class="col-lg-4 col-md-6 col-xs-12">
-          <div class="services-item text-center">
-            <div class="icon">
-              <i class="lni-brush"></i>
-            </div>
-            <h4>Atualizacoes Mensais</h4>
-            <p>Com atualizações semanais, você nunca vai ficar para trás! No nosso canal do Telegram, garantimos que
-              você tenha acesso aos melhores conteudos, sempre atualizados com novos links e conteúdos exclusivos. Toda
-              semana, sem perder tempo procurando!</p>
-          </div>
-        </div>
-        <!-- End Col -->
-        <!-- Start Col -->
-        <div class="col-lg-4 col-md-6 col-xs-12">
-          <div class="services-item text-center">
-            <div class="icon">
-              <i class="lni-heart"></i>
-            </div>
-            <h4>Links Organizados</h4>
-            <p> No nosso canal do Telegram, todos os links dos conteúdos estão organizados de forma simples e fácil de
-              acessar. Com categorias bem definidas e conteúdos separados por tema, você encontra rapidamente o que
-              procura, sem complicação.</p>
-          </div>
-        </div>
-        <!-- End Col -->
-
-      </div>
-    </div>
-  </section>
-  <!-- Services Section End -->
-  <!-- Business Plan Section Start -->
-  <section id="business-plan">
-    <div class="container">
-      <div class="row">
-        <!-- Start Col -->
-        <div class="col-lg-6 col-md-12 pl-0 pt-70 pr-5">
-          <div class="business-item-img">
-            <img src="img/business/Previa.png" class="img-fluid" alt="">
-          </div>
-        </div>
-        <!-- End Col -->
-        <!-- Start Col -->
-        <div class="col-lg-6 col-md-12 pl-4">
-          <div class="business-item-info">
-            <h3>Por Dentro Do Produto</h3>
-            <p>Nosso canal exclusivo no Telegram é o seu novo hub de aprendizado e entretenimento. <br> Aqui, você
-              encontra links organizados e atualizados semanalmente para cursos, livros e filmes – tudo em um só
-              lugar!<br> Com um pagamento único, você garante acesso ilimitado a uma vasta seleção de conteúdo, sem
-              mensalidades ou custos ocultos.</p>
-          </div>
-        </div>
-        <!-- End Col -->
-      </div>
-    </div>
-  </section>
-  <!-- Business Plan Section End -->
-  <!-- Cool Fetatures Section Start -->
-  <section id="features" class="section">
-    <div class="container">
-      <!-- Start Row -->
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="features-text section-header text-center">
-            <div>
-              <h2 class="section-title">VANTAGENS</h2>
-              <div class="desc-text">
-                <p>Todas essas vantagens reunidas em um só lugar, prontas para você acessar com facilidade e aproveitar
-                  ao máximo!</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Row -->
-      <!-- Start Row -->
-      <div class="row featured-bg">
-        <!-- Start Col -->
-        <div class="col-lg-6 col-md-6 col-xs-12 p-0">
-          <!-- Start Fetatures -->
-          <div class="feature-item featured-border1">
-            <div class="feature-icon float-left">
-              <i class="lni-coffee-cup"></i>
-            </div>
-            <div class="feature-info float-left">
-              <h4>Acesso Instantâneo</h4>
-              <p>A vantagem do acesso instantâneo é a combinação perfeita de conveniência e eficiência, permitindo que
-                você mergulhe rapidamente em recursos valiosos sem a frustração de buscas demoradas,proporcionando uma
-                experiência fluida e agradável.</p>
-            </div>
-          </div>
-          <!-- End Fetatures -->
-        </div>
-        <!-- End Col -->
-        <!-- Start Col -->
-        <div class="col-lg-6 col-md-6 col-xs-12 p-0">
-          <!-- Start Fetatures -->
-          <div class="feature-item featured-border2">
-            <div class="feature-icon float-left">
-              <i class="lni-briefcase"></i>
-            </div>
-            <div class="feature-info float-left">
-              <h4>Variedade de Conteúdos</h4>
-              <p>No nosso canal, a variedade de conteúdos é o que realmente faz a diferença. Seja você um amante de
-                cursos, livros, filmes ou séries, temos sempre algo novo e interessante para você explorar. Tudo que
-                você busca está aqui, organizado e pronto para ser consumido!</p>
-            </div>
-          </div>
-          <!-- End Fetatures -->
-        </div>
-        <!-- End Col -->
-        <!-- Start Col -->
-        <div class="col-lg-6 col-md-6 col-xs-12 p-0">
-          <!-- Start Fetatures -->
-          <div class="feature-item featured-border1">
-            <div class="feature-icon float-left">
-              <i class="lni-invention"></i>
-            </div>
-            <div class="feature-info float-left">
-              <h4>Facilidade de Acesso pelo Telegram</h4>
-              <p>No nosso canal, acessar conteúdos nunca foi tão fácil. Você tem tudo o que precisa, sem complicação. A
-                plataforma oferece uma navegação intuitiva e prática, permitindo que você encontre o conteúdo desejado
-                de forma rápida e sem perder tempo.</p>
-            </div>
-          </div>
-          <!-- End Fetatures -->
-        </div>
-        <!-- End Col -->
-        <!-- Start Col -->
-        <div class="col-lg-6 col-md-6 col-xs-12 p-0">
-          <!-- Start Fetatures -->
-          <div class="feature-item featured-border2">
-            <div class="feature-icon float-left">
-              <i class="lni-layers"></i>
-            </div>
-            <div class="feature-info float-left">
-              <h4>Conteúdo Raros e Exclusivos</h4>
-              <p>No nosso canal, você tem acesso a conteúdos raros e exclusivos que dificilmente encontra em outros
-                lugares. Se você está em busca de materiais únicos, como cursos especializados, livros difíceis de achar
-                ou filmes e séries especiais, aqui é o lugar certo.
-              </p>
-            </div>
-          </div>
-          <!-- End Fetatures -->
-        </div>
-        <!-- End Col -->
-        <!-- Start Col -->
-        <div class="col-lg-6 col-md-6 col-xs-12 p-0">
-          <!-- Start Fetatures -->
-          <div class="feature-item featured-border3">
-            <div class="feature-icon float-left">
-              <i class="lni-reload"></i>
-            </div>
-            <div class="feature-info float-left">
-              <h4>Sem Complicação ou Reclamações</h4>
-              <p>No nosso canal, o acesso é direto e sem enrolação. Sem links quebrados, sem complicações, você encontra
-                tudo o que precisa de forma rápida e sem estresse. A navegação é fácil e o conteúdo está sempre
-                disponível, pronto para ser consumido sem nenhum problema. só conteúdo de qualidade!</p>
-            </div>
-          </div>
-          <!-- End Fetatures -->
-        </div>
-        <!-- End Col -->
-        <!-- Start Col -->
-        <div class="col-lg-6 col-md-6 col-xs-12 p-0">
-          <!-- Start Fetatures -->
-          <div class="feature-item">
-            <div class="feature-icon float-left">
-              <i class="lni-support"></i>
-            </div>
-            <div class="feature-info float-left">
-              <h4>Exploração Sem Pressa</h4>
-              <p>Com o nosso canal, você pode explorar cursos, livros, filmes e séries no seu tempo. Sem pressa, sem
-                correria – encontre novos conteúdos e descubra novos interesses de maneira tranquila, sem pressões. Tudo
-                está à sua disposição, pronto para ser explorado quando você quiser.</p>
-            </div>
-          </div>
-          <!-- End Fetatures -->
-        </div>
-        <!-- End Col -->
-      </div>
-      <!-- End Row -->
-    </div>
-  </section>
-  <!-- Cool Fetatures Section End -->
-  <!-- Recent Showcase Section Start -->
-  <section id="showcase">
-    <div class="container-fluid right-position">
-      <!-- Start Row -->
-      <div class="row gradient-bg">
-        <div class="col-lg-12">
-          <div class="showcase-text section-header text-center">
-            <div>
-              <h2 class="section-title">Recem Adicionados</h2>
-              <div class="desc-text">
-                <p>Todos Completos, Organizados e Full HD</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Row -->
-      <!-- Start Row -->
-      <div class="row justify-content-center showcase-area">
-        <div class="col-lg-12 col-md-12 col-xs-12 pr-0">
-          <div class="showcase-slider owl-carousel">
-            <div class="item">
-              <div class="screenshot-thumb">
-                <img src="img/showcase/photo_2024-08-21_18-32-30.jpg" class="img-fluid" alt="" />
-                <div class="hover-content text-center">
-                  <div class="fancy-table">
-                    <div class="table-cell">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="screenshot-thumb">
-                <img src="img/showcase/Design sem nome.png" class="img-fluid" alt="" />
-                <div class="hover-content text-center">
-                  <div class="fancy-table">
-                    <div class="table-cell">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="screenshot-thumb">
-                <img src="img/showcase/Pedro Sobral.png" class="img-fluid" alt="" />
-                <div class="hover-content text-center">
-                  <div class="fancy-table">
-                    <div class="table-cell">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="screenshot-thumb">
-                <img src="img/showcase/RVDP 360 X 360.png" class="img-fluid" alt="" />
-                <div class="hover-content text-center">
-                  <div class="fancy-table">
-                    <div class="table-cell">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="screenshot-thumb">
-                <img src="img/showcase/FFNLB 360 X 360.png" class="img-fluid" alt="" />
-                <div class="hover-content text-center">
-                  <div class="fancy-table">
-                    <div class="table-cell">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="screenshot-thumb">
-                <img src="img/showcase/ZD 360 X 360.png" class="img-fluid" alt="" />
-                <div class="hover-content text-center">
-                  <div class="fancy-table">
-                    <div class="table-cell">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="screenshot-thumb">
-                <img src="img/showcase/EC 360 X 360.png" class="img-fluid" alt="" />
-                <div class="hover-content text-center">
-                  <div class="fancy-table">
-                    <div class="table-cell">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="screenshot-thumb">
-                <img src="img/showcase/AO 420 X 420.png" class="img-fluid" alt="" />
-                <div class="hover-content text-center">
-                  <div class="fancy-table">
-                    <div class="table-cell">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="screenshot-thumb">
-                <img src="img/showcase/G4S 360 X 360.png" class="img-fluid" alt="" />
-                <div class="hover-content text-center">
-                  <div class="fancy-table">
-                    <div class="table-cell">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="screenshot-thumb">
-                <img src="img/showcase/PCK 360 X 360.png" class="img-fluid" alt="" />
-                <div class="hover-content text-center">
-                  <div class="fancy-table">
-                    <div class="table-cell">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="screenshot-thumb">
-                <img src="img/showcase/PM 360 X 360.png" class="img-fluid" alt="" />
-                <div class="hover-content text-center">
-                  <div class="fancy-table">
-                    <div class="table-cell">
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            <div class="item">
-              <div class="screenshot-thumb">
-                <img src="img/showcase/ST10 360 X 360.png" class="img-fluid" alt="" />
-                <div class="hover-content text-center">
-                  <div class="fancy-table">
-                    <div class="table-cell">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="screenshot-thumb">
-                <img src="img/showcase/AL 360 X 360.png" class="img-fluid" alt="" />
-                <div class="hover-content text-center">
-                  <div class="fancy-table">
-                    <div class="table-cell">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="screenshot-thumb">
-                <img src="img/showcase/FBR 360 X 360.png" class="img-fluid" alt="" />
-                <div class="hover-content text-center">
-                  <div class="fancy-table">
-                    <div class="table-cell">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="screenshot-thumb">
-                <img src="img/showcase/MRS 360 X 360.png" class="img-fluid" alt="" />
-                <div class="hover-content text-center">
-                  <div class="fancy-table">
-                    <div class="table-cell">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="screenshot-thumb">
-                <img src="img/showcase/CV 360 X 360.png" class="img-fluid" alt="" />
-                <div class="hover-content text-center">
-                  <div class="fancy-table">
-                    <div class="table-cell">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="screenshot-thumb">
-                <img src="img/showcase/PRV 360 X 360.png" class="img-fluid" alt="" />
-                <div class="hover-content text-center">
-                  <div class="fancy-table">
-                    <div class="table-cell">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="screenshot-thumb">
-                <img src="img/showcase/ED 420 X 420.png" class="img-fluid" alt="" />
-                <div class="hover-content text-center">
-                  <div class="fancy-table">
-                    <div class="table-cell">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="screenshot-thumb">
-                <img src="img/showcase/VYT 360 X 360.png" class="img-fluid" alt="" />
-                <div class="hover-content text-center">
-                  <div class="fancy-table">
-                    <div class="table-cell">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="screenshot-thumb">
-                <img src="img/showcase/TB 360 X 360.png" class="img-fluid" alt="" />
-                <div class="hover-content text-center">
-                  <div class="fancy-table">
-                    <div class="table-cell">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Row -->
-    </div>
-  </section>
-  <!-- Recent Showcase Section End -->
-  <!-- Our Pricing Plan Section Start -->
-  <section id="pricing" class="section">
-    <div class="container">
-      <!-- Start Row -->
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="pricing-text section-header text-center">
-            <div>
-              <h2 class="section-title">Tudo Isso Por Um Preço Acessível </h2>
-              <div class="desc-text">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Row -->
-      <!-- Start Row -->
-      <div class="pricing-tables">
-        <!--  Start Col -->
-        <div class="col-lg-4 col-md-4 col-xs-12">
-          <div class="pricing-table text-center">
-            <div class="pricing-details">
-              <h3>ULTIMAS VAGAS</h3>
-              <h1><span>$</span>19,90</h1>
-              <ul>
-                <li>Pagamento único</li>
-                <li>Atualizacoes Semanais</li>
-                <li>+ 3.500 Cursos</li>
-                <li>+ 1.500 Livros</li>
-                <li>+ 700 series e filmes</li>
-                <li>Acesso a Promoções Incriveis</li>
-                <li>Cursos Com Certificados</li>
-              </ul>
-            </div>
-            <div class="plan-button">
-              <a href="https://pay.kirvano.com/9e83b4e7-a2bb-4863-9cbd-edc2bb3ab0ed" class="btn btn-common">ADQUIRA Agora</a>
-            </div>
-          </div>
-        </div>
-        <!--  End Col -->
-      </div>
-      <!-- End Row -->
-    </div>
-  </section>
-  <!-- Our Pricing Plan Section End -->
-  <!-- Client Testimoninals Section Start -->
-  <section id="testimonial" class="section">
-    <div class="container right-position">
-      <!-- Start Row -->
-      <div class="row">
-        <!-- End Row -->
-        <!-- Start Row -->
-        <div class="row justify-content-center testimonial-area">
-          <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 pr-20 pl-20"
-            style="overflow: hidden;padding-bottom: 60px">
-            <div id="client-testimonial" class="text-center owl-carousel">
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="content-inner">
-                    <p class="description">"O canal é muito bem atualizado, sempre com links novos para cursos, filmes e
-                      séries que acabaram de sair. Dá para perceber o cuidado em manter tudo atualizado, o que é ótimo
-                      para quem quer estar por dentro das novidades sem ficar procurando por aí."</p>
-                    <div class="author-info">
-                      <h5><span> – Jéssica F.</span></h5>
-                    </div>
-                  </div>
-                  <div class="client-thumb">
-                    <img src="img/testimonial/M3 90 X 90.png" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="content-inner">
-                    <p class="description">"A variedade de conteúdo é impressionante! Eu consigo encontrar desde
-                      materiais técnicos para estudar até filmes e séries para relaxar. É como ter uma biblioteca
-                      digital na palma da mão. Com certeza, um dos melhores canais que já encontrei!"</p>
-                    <div class="author-info">
-                      <h5><span> – Pedro H</span></h5>
-                    </div>
-                  </div>
-                  <div class="client-thumb">
-                    <img src="img/testimonial/H3 90 X 90.png" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="content-inner">
-                    <p class="description">"O canal tem uma organização de links que facilita muito a busca por
-                      conteúdos específicos. É tudo dividido por tópicos, então eu encontro o que preciso sem perder
-                      tempo. Com certeza, um dos canais mais práticos e organizados que já usei!"</p>
-                    <div class="author-info">
-                      <h5><span> – Luiz S</span></h5>
-                    </div>
-                  </div>
-                  <div class="client-thumb">
-                    <img src="img/testimonial/H2 90 X 90.png" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="content-inner">
-                    <p class="description">"Esse canal é perfeito para quem quer ter acesso rápido a uma variedade
-                      enorme de materiais, desde cursos até filmes. Não preciso ficar pulando de um canal para outro ou
-                      caçando links, tudo está aqui! Dá para começar a estudar ou assistir algo novo em poucos cliques."
-                    </p>
-                    <div class="author-info">
-                      <h5><span> – Mariana R</span></h5>
-                    </div>
-                  </div>
-                  <div class="client-thumb">
-                    <img src="img/testimonial/M2 90 X 90.png" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="content-inner">
-                    <p class="description">"Fiquei impressionado com a quantidade de arquivos que encontrei
-                      aqui,especialmente alguns cursos e livros raros que eu já vinha procurando há muito tempo!Esse
-                      canal realmente entrega um conteúdo que não se acha fácil por aí."</p>
-                    <div class="author-info">
-                      <h5><span> – Carlos M</span></h5>
-                    </div>
-                  </div>
-                  <div class="client-thumb">
-                    <img src="img/testimonial/H1 90 x 90.png" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="content-inner">
-                    <p class="description">"Além de ser um canal muito bem organizado,<br>ele me poupou bastante
-                      dinheiro com cursos e livros que eu teria que pagar.É incrível a qualidade e a quantidade de
-                      material acessível sem custo. Super recomendo!"</br></p>
-                    <div class="author-info">
-                      <h5><span>– Ana Paula G.</span></h5>
-                    </div>
-                  </div>
-                  <div class="client-thumb">
-                    <img src="img/testimonial/M1 90 x 90.png" alt="">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End Row -->
-      </div>
-  </section>
-  <!-- Client Testimoninals Section End -->
-  </div>
-  <!-- End Row -->
-  </div>
-  </section>
-  <!-- Contact Us Section End -->
-  <!-- Footer Section Start -->
-  <footer>
-    <!-- Footer Area Start -->
-    <section id="footer-Content">
-      <div class="container">
-      </div>
-      <!-- Copyright Start  -->
-      <div class="copyright">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
-          <!-- Star Row -->
-          <div class="row">
-            <div class="col-md-12">
-              <div class="site-info text-center">
-                <p> Feito Por <a href="" rel="nofollow"> Casa Dos Cursos</a></p>
-              </div>
+            <div class="hero-content">
+                <h1 class="fade-in-up"><span style="color: var(--accent-blue);">Todos</span> os <span style="color: var(--accent-blue);">cursos</span> que você sempre <span style="color: var(--accent-blue);">sonhou</span>, em um só lugar</h1>
+                <p class="subheadline fade-in-up delay-1"><span style="color: var(--accent-blue);">Acesso vitalício</span> a cursos, <span style="color: var(--accent-blue);">livros</span> e <span style="color: var(--accent-blue);">conteúdos</span> de todos os nichos em um único <span style="color: var(--accent-blue);">canal exclusivo</span> no Telegram.</p>
             </div>
-            <!-- End Col -->
-          </div>
-          <!-- End Row -->
         </div>
-      </div>
-      <!-- Copyright End -->
     </section>
-    <!-- Footer area End -->
 
-  </footer>
-  <!-- Footer Section End -->
-  <!-- Go To Top Link -->
-  <a href="#" class="back-to-top">
-    <i class="lni-chevron-up"></i>
-  </a>
-  <!-- Preloader -->
-  <div id="preloader">
-    <div class="loader" id="loader-1"></div>
-  </div>
-  <!-- End Preloader -->
-  <!-- jQuery first, then Tether, then Bootstrap JS. -->
-  <script src="js/jquery-min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.js"></script>
-  <script src="js/jquery.nav.js"></script>
-  <script src="js/scrolling-nav.js"></script>
-  <script src="js/jquery.easing.min.js"></script>
-  <script src="js/nivo-lightbox.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/form-validator.min.js"></script>
-  <script src="js/contact-form-script.js"></script>
-  <script src="js/main.js"></script>
+    <!-- Pain Points Section -->
+    <section class="pain-points">
+        <div class="container">
+            <div class="pain-card fade-in-up delay-2">
+                <span class="pain-icon">😓</span>
+                <p class="pain-text">Dificuldade em encontrar bons cursos</p>
+            </div>
+            <div class="pain-card fade-in-up delay-3">
+                <span class="pain-icon">🗂️</span>
+                <p class="pain-text">Conteúdos espalhados em vários lugares</p>
+            </div>
+            <div class="pain-card fade-in-up delay-4">
+                <span class="pain-icon">💸</span>
+                <p class="pain-text">Tempo e dinheiro desperdiçados</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution">
+        <div class="container">
+            <span class="solution-highlight fade-in-up">A solução que você procurava</span>
+            <h2 class="fade-in-up delay-1">Um canal exclusivo no Telegram que centraliza todo o conhecimento</h2>
+            <p class="solution-text fade-in-up delay-2">Imagine ter acesso a milhares de cursos premium, livros e conteúdos de qualidade, todos organizados e atualizados constantemente em um único lugar. Sem precisar caçar informações pela internet, sem perder tempo, sem gastar fortunas. Tudo que você precisa para evoluir, disponível 24/7 no seu celular.</p>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="benefits-title fade-in-up">O que você vai ter acesso</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card fade-in-up delay-1">
+                    <span class="benefit-icon">📚</span>
+                    <h3 class="benefit-title">+2.500</h3>
+                    <p class="benefit-description">Cursos disponíveis de todos os nichos: marketing, programação, design, finanças e muito mais</p>
+                </div>
+                <div class="benefit-card fade-in-up delay-2">
+                    <span class="benefit-icon">📖</span>
+                    <h3 class="benefit-title">+7.690</h3>
+                    <p class="benefit-description">Livros para estudar e se aprofundar em qualquer área do conhecimento</p>
+                </div>
+                <div class="benefit-card fade-in-up delay-3">
+                    <span class="benefit-icon">🔄</span>
+                    <h3 class="benefit-title">Atualizações Diárias</h3>
+                    <p class="benefit-description">Novos conteúdos adicionados constantemente para você estar sempre atualizado</p>
+                </div>
+                <div class="benefit-card fade-in-up delay-4">
+                    <span class="benefit-icon">🚫</span>
+                    <h3 class="benefit-title">Sem Anúncios</h3>
+                    <p class="benefit-description">Experiência limpa e focada, sem propagandas ou distrações</p>
+                </div>
+                <div class="benefit-card fade-in-up delay-5">
+                    <span class="benefit-icon">♾️</span>
+                    <h3 class="benefit-title">Acesso Vitalício</h3>
+                    <p class="benefit-description">Pague uma vez e tenha acesso para sempre, sem mensalidades</p>
+                </div>
+                <div class="benefit-card fade-in-up delay-6">
+                    <span class="benefit-icon">📱</span>
+                    <h3 class="benefit-title">Qualquer Dispositivo</h3>
+                    <p class="benefit-description">Acesse pelo celular, tablet ou computador quando e onde quiser</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof">
+        <div class="container">
+            <h2 class="social-proof-title fade-in-up">O que nossos membros dizem</h2>
+            
+            <div class="testimonial fade-in-up delay-1">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"É surreal ter tudo em um só lugar. Antes eu perdia horas procurando cursos e livros. Agora está tudo organizado no canal."</p>
+                <p class="testimonial-author">— Lucas M.</p>
+            </div>
+
+            <div class="testimonial fade-in-up delay-2">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Pelo valor que custa, entrega muito mais do que eu esperava. Conteúdos de vários nichos, sem anúncios e sempre atualizado."</p>
+                <p class="testimonial-author">— Fernanda R.</p>
+            </div>
+
+            <div class="testimonial fade-in-up delay-3">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Comprei achando que era só mais um grupo, mas me surpreendi. Tem muito conteúdo bom e novo quase todo dia."</p>
+                <p class="testimonial-author">— Rafael C.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offer Section -->
+    <section class="offer">
+        <div class="container">
+            <h2 class="fade-in-up">Oferta especial por tempo limitado</h2>
+            
+            <div class="price-container fade-in-up delay-1">
+                <div class="price-content">
+                    <p class="old-price">De R$ 39,90</p>
+                    <p class="current-price">R$ 19,90</p>
+                    <p class="price-details">Pagamento único • Acesso vitalício</p>
+                    
+                    <div class="offer-benefits">
+                        <div class="offer-benefit">
+                            <span class="check-icon">✓</span>
+                            <span>Acesso imediato após o pagamento</span>
+                        </div>
+                        <div class="offer-benefit">
+                            <span class="check-icon">✓</span>
+                            <span>+2.500 cursos de todos os nichos</span>
+                        </div>
+                        <div class="offer-benefit">
+                            <span class="check-icon">✓</span>
+                            <span>+7.690 livros para estudar</span>
+                        </div>
+                        <div class="offer-benefit">
+                            <span class="check-icon">✓</span>
+                            <span>Atualizações diárias com novos conteúdos</span>
+                        </div>
+                        <div class="offer-benefit">
+                            <span class="check-icon">✓</span>
+                            <span>Sem anúncios ou propagandas</span>
+                        </div>
+                        <div class="offer-benefit">
+                            <span class="check-icon">✓</span>
+                            <span>Acesso em qualquer dispositivo</span>
+                        </div>
+                        <div class="offer-benefit">
+                            <span class="check-icon">✓</span>
+                            <span>Suporte dedicado via Telegram</span>
+                        </div>
+                        <div class="offer-benefit">
+                            <span class="check-icon">✓</span>
+                            <span>10 dias de garantia incondicional</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="https://www.ggcheckout.com/checkout/v2/uaLN3Z8R13x8E1vUyGDd" class="cta-button">
+                <span class="cta-text">Quero Acesso Vitalício Agora</span>
+            </a>
+
+            <div class="trust-badges">
+                <div class="badge">
+                    <span class="badge-icon">🔒</span>
+                    <span>Compra 100% segura</span>
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">⚡</span>
+                    <span>Acesso imediato</span>
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">🛡️</span>
+                    <span>10 dias de garantia</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="guarantee">
+        <div class="container">
+            <span class="guarantee-icon">🛡️</span>
+            <h3 class="guarantee-title">Garantia Incondicional de 10 Dias</h3>
+            <p class="guarantee-text">Você tem 10 dias de garantia incondicional. Se por qualquer motivo você não gostar do conteúdo ou achar que não valeu a pena, pode solicitar o reembolso total sem burocracia. Nós devolvemos seu dinheiro, sem perguntas. O risco é todo nosso.</p>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <h2 class="final-cta-title fade-in-up">Não perca essa oportunidade</h2>
+            <p class="final-cta-subtitle fade-in-up delay-1">Milhares de pessoas já estão transformando suas vidas com acesso ilimitado ao conhecimento. Chegou a sua vez.</p>
+            
+            <a href="https://www.ggcheckout.com/checkout/v2/uaLN3Z8R13x8E1vUyGDd" class="cta-button fade-in-up delay-2">
+                <span class="cta-text">Garantir Meu Acesso Agora</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 - Todos os direitos reservados a casa dos cursos</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for CTA links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
